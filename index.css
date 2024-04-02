@@ -92,6 +92,7 @@ button:hover {
 
 h1, .modal-content h2, .modal-content p {
   color: #5d5f5e;
+  
 }
 
 .close {
@@ -112,4 +113,6 @@ button {
 button:hover {
   background-color: #5d5f5e;
 }
-
+img {
+  width: 300px ;
+}
