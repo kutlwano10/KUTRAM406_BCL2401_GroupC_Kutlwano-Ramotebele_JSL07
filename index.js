@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeModal = document.querySelector('.close');
   
     // Hide the modal initially
-    modal.style.display = 'none';//
+    modal.style.display = 'none';//then we will recall it again to view the certificate 
   
     cardForm.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -23,17 +23,18 @@ document.addEventListener('DOMContentLoaded', function () {
   
       const studentName = studentNameInput.value;
       const personalMessage = personalMessageInput.value;
-      const courseName = courseNameInput.value;
+      // const courseName = courseNameInput.value;
 
-      // const courseName = courseNameInput ? courseNameInput.value : "a course"; // Fallback to "a course" if no input
+      const courseName = courseNameInput ? courseNameInput.value : "a course"; // Fallback to "a course" if no input
   
-      if (studentName.trim() === '' || personalMessage.trim() === '' || courseName.trim() === '') {
+      if (studentName.trim() === '' || personalMessage.trim() === '') {
         alert('Please fill in all fields');
         return;
       }
 
       //this function Displays The content of the Certificate
       function displayCertificate() {
+
         // 🚨 Generate certificate content dynamically
         const containerDiv = document.createElement('div')
         const img = document.createElement('img');
@@ -41,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         img.src ='./logo.png';
         containerDiv.appendChild(img);
 
-        containerDiv.innerHTML = `<h1>Certificate OF Achievement</h1>
+        containerDiv.innerHTML = `<h1>Certificate Of Achievement</h1>
         <p>This is to certify that</p>
         <h3>${studentName}</h3>
         <p>Has almost completed the</p>
@@ -64,11 +65,10 @@ document.addEventListener('DOMContentLoaded', function () {
      displayCertificate()
     });
 
-    
-  
     //  🚨 Close the modal when the close button is clicked
-    closeModal('', function () {
-      
+    closeModal.addEventListener('click', function () {
+      modal.style.display = 'none';
+
     });
   });
 
