@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.style.display = 'none';//then we will recall it again to view the certificate 
   
     cardForm.addEventListener('submit', function (event) {
-      event.preventDefault();
+      event.preventDefault(); 
   
       // 🚨 Get input values
       const studentNameInput = document.getElementById('studentName'); //student Name inputed
@@ -39,8 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const containerDiv = document.createElement('div')
         const img = document.createElement('img');
 
-        img.src ='./logo.png';
-        containerDiv.appendChild(img);
+        /*img.src ='./logo.png';
+        containerDiv.appendChild(img);*/
 
         containerDiv.innerHTML = `<h1>Certificate Of Achievement</h1>
         <p>This is to certify that</p>
@@ -68,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
     //  🚨 Close the modal when the close button is clicked
     closeModal.addEventListener('click', function () {
       modal.style.display = 'none';
+
+      
 
     });
   });
