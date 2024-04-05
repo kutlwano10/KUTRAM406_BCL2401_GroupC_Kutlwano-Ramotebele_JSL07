@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
     cardForm.addEventListener('submit', function (event) {
       event.preventDefault(); 
+      certificateContent.innerHTML = ''; //This clears the previous inputs so that it dont duplicate,when the Dom runs again
   
       // 🚨 Get input values
       const studentNameInput = document.getElementById('studentName'); //student Name inputed
@@ -30,13 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
       if (studentName.trim() === '' || personalMessage.trim() === '') {
         alert('Please fill in all fields');
         return;
+      
       }
 
-      //this function Displays The content of the Certificate
-      function displayCertificate() {
-
-        // 🚨 Generate certificate content dynamically
-        const containerDiv = document.createElement('div')
+      const containerDiv = document.createElement('div')
         const img = document.createElement('img');
 
         /*img.src ='./logo.png';
@@ -53,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         certificateContent.appendChild(containerDiv)
         
+        
       
         //  Display the modal
         modal.style.display = 'block';
@@ -61,8 +60,14 @@ document.addEventListener('DOMContentLoaded', function () {
         studentNameInput.value = '';
         personalMessageInput.value = '';
         if(courseNameInput) courseNameInput.value = '';
-     } 
-     displayCertificate()
+
+      //this function Displays The content of the Certificate
+      
+
+        // 🚨 Generate certificate content dynamically
+        
+     
+     
     });
 
     //  🚨 Close the modal when the close button is clicked
@@ -72,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
       
 
     });
+    
   });
 
  
